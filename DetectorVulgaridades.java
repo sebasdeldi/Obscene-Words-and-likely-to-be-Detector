@@ -256,6 +256,49 @@ public class DetectorVulgaridades {
     }
     
     
+     /**
+     * 
+
+     * @return String [] palabrasTexto, un arreglo donde cada una de las posiciones es una palabra de el arreglo
+     * 
+     * 
+     * La idea de este metodo es que se use cuando se quieren comparar un texto más extenso con el diccionario
+     * dicho texto tendrá que ser dado en un archivo de texto llamado Text.txt y ubicado en el fichero raiz de 
+     * el proyecto 
+     */
+    
+    
+    
+    public String[] LecturaTexto() throws FileNotFoundException, IOException{
+    
+        String [] palabrasTexto = new String[10000];
+
+        BufferedReader br = new BufferedReader(new FileReader("Text.txt"));
+        
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+
+            while (line != null) {
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+            }
+            String everything = sb.toString();
+            
+            for (int i = 0; i < 10000; i++){
+            
+                palabrasTexto = everything.split(" +");
+            
+            }
+            return palabrasTexto;
+            
+        } finally {
+            br.close();
+        }
+    }
+    
+    
     
 }
 
