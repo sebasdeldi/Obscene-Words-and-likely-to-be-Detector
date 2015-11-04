@@ -146,10 +146,8 @@ public class DetectorVulgaridades {
         for (int z = 0; z < texto.length; z++){
             
             palabraDelTexto = texto[z];
-            //String [] obsceneWords = LecturaDiccionario();
         
         
-                  //por ahora solo va a funcionar si el input es 1 sola palabra
                 char[] charArray_input = palabraDelTexto.toCharArray();
                 String [] obsceneWords = LecturaDiccionario();
                 
